@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<script src="/libs/js/bootstrap.bundle.min.js" async></script>
-		<script src="/libs/js/highlight.min.js" async></script>
-		<link rel="stylesheet" href="/libs/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="/styles/dist/style.css" />
-		<link rel="stylesheet" href="/libs/css/atom-one-dark.min.css" />
-		<script src="/scripts/dist/app.js" defer></script>
-		<script src="/scripts/dist/sender.js" defer></script>
+		<title>Simple HTTP Client</title>
+		<script src="./libs/js/bootstrap.bundle.min.js" async></script>
+		<script src="./libs/js/highlight.min.js" async></script>
+		<link rel="stylesheet" href="./libs/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./styles/dist/style.css" />
+		<link rel="stylesheet" href="./libs/css/atom-one-dark.min.css" />
+		<script type="module" src="./scripts/dist/app.js" defer></script>
+		<script type="module" src="./scripts/dist/sender.js" defer></script>
 	</head>
-	<body data-bs-theme="dark" class="p-5 h-100">
+	<body data-bs-theme="dark" class="p-4 h-100">
 		<header class="rounded-3 bg-body-tertiary shadow mb-5">
 			<select class="form-select" id="requestMethod">
 				<option value="GET">GET</option>
@@ -28,24 +28,26 @@
 			/>
 			<button class="btn btn-primary" id="sendRequest">Send</button>
 		</header>
-		<main class="rounded-3 bg-body-tertiary shadow p-4 mb-5">
+		<main
+			class="rounded-3 bg-body-tertiary shadow p-4 mb-5 d-none"
+			id="requestBody"
+		>
 			<h6 class="p-2">JSON Body</h6>
 			<pre class="w-100 m-0 p-0">
                 <code class="language-json w-100 bg-body-secondary border-0 rounded-3 p-3 shadow" contenteditable id="editor"></code>
             </pre>
 			<button class="btn btn-primary w-25" id="formatContent">Format</button>
-
-			<div
-				class="toast-container position-absolute bottom-0 end-0 mb-4 me-4"
-				id="toastContainer"
-			></div>
 		</main>
-		<footer class="rounded-3 bg-body-tertiary shadow p-4">
+		<footer class="rounded-3 bg-body-tertiary shadow p-4" id="httpResponse">
 			<h6 class="p-2">Response</h6>
 			<pre class="w-100 m-0 p-0">
                 <code class="language-json w-100 bg-body-secondary border-0 rounded-3 p-3 shadow" id="serverResponse"></code>
             </pre>
 		</footer>
 		<br />
+		<div
+			class="toast-container position-fixed bottom-0 end-0 mb-4 me-4"
+			id="toastContainer"
+		></div>
 	</body>
 </html>

@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+	width: 0rem;
+}
+
 header {
 	display: grid;
 	grid-template-rows: 1fr;
@@ -13,4 +17,8 @@ header {
 code {
 	display: block;
 	height: 40ch;
+
+	&#serverResponse {
+		height: 60ch;
+	}
 }

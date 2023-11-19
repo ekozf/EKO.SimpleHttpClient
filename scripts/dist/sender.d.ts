@@ -1,2 +1,2 @@
-declare function SendRequest(): Promise<void>;
+export {};
 //# sourceMappingURL=sender.d.ts.map
